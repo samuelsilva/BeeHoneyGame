@@ -43,7 +43,9 @@ function update() { // responsável por atualizar essas coisas na tela
     backgroundImage.move(3, 900, 0);
     backgroundImage2.move(3, 0, -900)
     bee.move();
+    bee.animation();
     spider.move();
+    spider.animation();
     spider2.move();
 }
 
