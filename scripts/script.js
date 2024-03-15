@@ -3,6 +3,7 @@ var canvas = document.getElementById('canvas').getContext("2d");
 
 var backgroundImage = new Background(0,0,500,900, "assets/bg.png");
 var backgroundImage2 = new Background(0,-900,500,900, "assets/bg.png");
+var flower = new Flower(0,0,50,50,"assets/flower1.png")
 var bee = new Bee(200,500,100,80, "assets/bee1.png");
 var spider = new Spider(100,100,100,100, "assets/spider1.png");
 
@@ -35,15 +36,18 @@ function draw() { // responsável por desenhar coisas na tela
     backgroundImage2.draw();
     bee.draw();
     spider.draw();
+    flower.draw();
 }
 
 function update() { // responsável por atualizar essas coisas na tela
     backgroundImage.move(3, 900, 0);
     backgroundImage2.move(3, 0, -900)
     bee.move();
-    bee.animation("bee");
+    bee.animation("bee",4);
     spider.move();
-    spider.animation("spider");
+    spider.animation("spider",4);
+    flower.move();
+    flower.animation("flower",2)
 }
 
 

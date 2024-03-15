@@ -17,7 +17,7 @@ class Obj{
         canvas.drawImage(img, this.positionX, this.positionY, this.width, this.height);
     }
 
-    animation(name) { // create the movement effect on bee
+    animation(name, limit) { // create the movement effect on bee
         
         this.timer += 1;
         
@@ -26,7 +26,7 @@ class Obj{
             this.frame += 1;
         }
 
-        if(this.frame > 4) {
+        if(this.frame > limit) {
             this.frame = 1;
         }
         this.color = "assets/" + name + this.frame + ".png";
@@ -65,4 +65,8 @@ class Background extends Obj{
             this.positionY = pos;
         }
     }
+}
+
+class Flower extends Spider{
+
 }
