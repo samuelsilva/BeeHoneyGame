@@ -28,6 +28,7 @@ class Spider extends Obj{
         this.positionY += 2;
         if(this.positionY > 900) {
             this.positionY = -50;
+            this.positionX = Math.random() * (400 - 0); // posições aleatórias da aranha
         }
     }
 }
