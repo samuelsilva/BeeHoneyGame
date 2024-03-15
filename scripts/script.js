@@ -2,8 +2,8 @@ var canvas = document.getElementById('canvas').getContext("2d");
 //var context = canvas.getContext("2d");
 
 
-var bee = new Bee(200,500,100,100, "yellow");
-var spider = new Spider(100,100,100,100, "black");
+var bee = new Bee(200,500,100,100, "assets/bee1.png");
+var spider = new Spider(100,100,100,100, "assets/spider1.png");
 var spider2 = new Spider(0,0,100,100, "orange");
 
 // adicionando eventos de teclado - movimentando objetos

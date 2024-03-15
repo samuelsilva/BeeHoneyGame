@@ -8,8 +8,9 @@ class Obj{
     }
 
     draw() {
-        canvas.fillStyle = this.color;
-        canvas.fillRect(this.positionX,this.positionY, this.width, this.height);
+        var img = new Image();
+        img.src = this.color;
+        canvas.drawImage(img, this.positionX, this.positionY);
     }
 }
 
