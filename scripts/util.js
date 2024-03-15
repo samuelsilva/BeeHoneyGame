@@ -10,7 +10,7 @@ class Obj{
     draw() {
         var img = new Image();
         img.src = this.color;
-        canvas.drawImage(img, this.positionX, this.positionY);
+        canvas.drawImage(img, this.positionX, this.positionY, this.width, this.height);
     }
 }
 
