@@ -5,7 +5,6 @@ var backgroundImage = new Background(0,0,500,900, "assets/bg.png");
 var backgroundImage2 = new Background(0,-900,500,900, "assets/bg.png");
 var bee = new Bee(200,500,100,80, "assets/bee1.png");
 var spider = new Spider(100,100,100,100, "assets/spider1.png");
-var spider2 = new Spider(0,0,100,100, "orange");
 
 // adicionando eventos de teclado - movimentando objetos
 document.addEventListener("keydown", function(event) { //pressionar uma tecla
@@ -36,17 +35,15 @@ function draw() { // responsável por desenhar coisas na tela
     backgroundImage2.draw();
     bee.draw();
     spider.draw();
-    spider2.draw();
 }
 
 function update() { // responsável por atualizar essas coisas na tela
     backgroundImage.move(3, 900, 0);
     backgroundImage2.move(3, 0, -900)
     bee.move();
-    bee.animation();
+    bee.animation("bee");
     spider.move();
-    spider.animation();
-    spider2.move();
+    spider.animation("spider");
 }
 
 
