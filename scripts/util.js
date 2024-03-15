@@ -1,4 +1,8 @@
 class Obj{
+
+    frame = 1;
+    timer = 0;
+
     constructor(positionX,positionY,width,height, color){
         this.positionX = positionX;
         this.positionY = positionY;
@@ -12,19 +16,9 @@ class Obj{
         img.src = this.color;
         canvas.drawImage(img, this.positionX, this.positionY, this.width, this.height);
     }
-}
 
-class Bee extends Obj{
-    direction = 0;
-    frame = 1;
-    timer = 0;
-
-
-    move() {
-        this.positionX += this.direction;
-    }
-
-    animation() { // create the movement effect on bee
+    animation(name) { // create the movement effect on bee
+        
         this.timer += 1;
         
         if(this.timer > 5){
@@ -35,14 +29,20 @@ class Bee extends Obj{
         if(this.frame > 4) {
             this.frame = 1;
         }
-        this.color = "assets/bee" + this.frame + ".png";
+        this.color = "assets/" + name + this.frame + ".png";
     }
 }
 
+class Bee extends Obj{
+    direction = 0;
+
+    move() {
+        this.positionX += this.direction;
+    }
+
+}
+
 class Spider extends Obj{
-    frame = 1;
-    timer = 0;
-        
         
     // garantir que a aranha vai ficar descendo
     move() {
@@ -52,21 +52,6 @@ class Spider extends Obj{
             this.positionY = -50;
             this.positionX = Math.random() * (400 - 0); // posições aleatórias da aranha
         }
-    }
-
-    animation() { // create the movement effect on bee
-        
-        this.timer += 1;
-        
-        if(this.timer > 5){
-            this.timer = 0;
-            this.frame += 1;
-        }
-
-        if(this.frame > 4) {
-            this.frame = 1;
-        }
-        this.color = "assets/spider" + this.frame + ".png";
     }
 
 }
