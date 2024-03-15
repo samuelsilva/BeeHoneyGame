@@ -1,7 +1,8 @@
 var canvas = document.getElementById('canvas').getContext("2d");
 //var context = canvas.getContext("2d");
 
-var backgroundImage = new Obj(0,0,500,900, "assets/bg.png");
+var backgroundImage = new Background(0,0,500,900, "assets/bg.png");
+var backgroundImage2 = new Background(0,-900,500,900, "assets/bg.png");
 var bee = new Bee(200,500,100,80, "assets/bee1.png");
 var spider = new Spider(100,100,100,100, "assets/spider1.png");
 var spider2 = new Spider(0,0,100,100, "orange");
@@ -32,12 +33,15 @@ document.addEventListener("keyup", function(event) { //soltar uma tecla
 
 function draw() { // responsável por desenhar coisas na tela
     backgroundImage.draw();
+    backgroundImage2.draw();
     bee.draw();
     spider.draw();
     spider2.draw();
 }
 
 function update() { // responsável por atualizar essas coisas na tela
+    backgroundImage.move(3, 900, 0);
+    backgroundImage2.move(3, 0, -900)
     bee.move();
     spider.move();
     spider2.move();
