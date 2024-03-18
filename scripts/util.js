@@ -35,11 +35,28 @@ class Obj{
 
 class Bee extends Obj{
     direction = 0;
+    lifes = 3;
+    points = 0;
+    movementSpeed = 1;
+
 
     move() {
         this.positionX += this.direction;
     }
 
+    collide(obj) {
+        if (this.positionX < obj.positionX +obj.width &&
+            this.positionX + this.width > obj.positionX &&
+            this.positionY < obj.positionY +obj.height &&
+            this.positionY + this.height > obj.positionY) 
+        {
+            //console.log("colidiu");
+            return true;
+        }else {
+            //console.log("NÃO colidiu");
+            return false;
+        }
+    }
 }
 
 class Spider extends Obj{
@@ -52,6 +69,11 @@ class Spider extends Obj{
             this.positionY = -50;
             this.positionX = Math.random() * (400 - 0); // posições aleatórias da aranha
         }
+    }
+
+    respaw() {
+        this.positionY = -50;
+        this.positionX = Math.random() * (400 - 0);
     }
 
 }
@@ -69,4 +91,12 @@ class Background extends Obj{
 
 class Flower extends Spider{
 
+}
+
+class Text{
+    draw(text, positionX, positionY, color) {
+        canvas.font = "40px Arial";
+        canvas.fillStyle = color;
+        canvas.fillText(text,positionX,positionY);
+    }
 }
